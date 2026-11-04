@@ -4,11 +4,14 @@
 
 import sys
 
-x = 0
+ans = 0.0
 for line in sys.stdin:
     try:
-        x += int(line)
+        ans += float(line)
     except ValueError:
-        x += float(line)
+        sys.exit(1)
 
-print(x)
+if ans.is_integer():
+    print(int(ans))
+else:
+    print(ans)
